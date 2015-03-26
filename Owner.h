@@ -3,7 +3,7 @@
 
 #include "Worker.h"
 
-class Owner : public Protocol
+class Owner : public AnotherProtocol, public Protocol
 {
 public:
 	int xid;
@@ -11,6 +11,8 @@ public:
 	Owner(int parameter);
 	void workerNotifiesDelegateOK(Worker *worker);
 	void workerNotifiesDeleagateNOK(Worker *worker);
+	std::string workerRequestDelegateKey(Worker *worker);
+	std::string workerRequestDelegateValue(Worker *worker);
 	void doSomething(int parameter);
 	~Owner();
 };

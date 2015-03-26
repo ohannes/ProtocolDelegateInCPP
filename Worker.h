@@ -3,6 +3,7 @@
 
 class Worker;
 class Protocol;
+class AnotherProtocol;
 
 void printLog(std::string message);
 
@@ -15,10 +16,20 @@ public:
 	~Protocol();
 };
 
+class AnotherProtocol
+{
+public:
+	AnotherProtocol();
+	virtual std::string workerRequestDelegateKey(Worker *worker) = 0;
+	virtual std::string workerRequestDelegateValue(Worker *worker) = 0;
+	~AnotherProtocol();
+};
+
 class Worker
 {
 public:
 	Protocol *delegate;
+	AnotherProtocol *anotherDelegate;
 	int xid;
 	Worker(int parameter);
 	void work(int parameter);

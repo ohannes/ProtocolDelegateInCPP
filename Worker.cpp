@@ -12,6 +12,10 @@ Protocol::Protocol(){}
 
 Protocol::~Protocol(){}
 
+AnotherProtocol::AnotherProtocol(){}
+
+AnotherProtocol::~AnotherProtocol(){}
+
 Worker::Worker(int parameter)
 {
 	xid = parameter;
@@ -40,6 +44,17 @@ void Worker::work(int parameter)
 		{
 			printLog("No delegate assinged to Worker");
 		}
+	}
+
+	if(anotherDelegate)
+	{
+		string key = anotherDelegate->workerRequestDelegateKey(this);
+		string value = anotherDelegate->workerRequestDelegateValue(this);
+		printLog("anotherDelegate declared value " + value + " for key " + key);
+	}
+	else
+	{
+		printLog("No anotherDelegate assinged to Worker");
 	}
 }
 
