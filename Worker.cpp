@@ -8,14 +8,6 @@ void printLog(string message)
 	cout << message << endl;
 }
 
-Protocol::Protocol(){}
-
-Protocol::~Protocol(){}
-
-AnotherProtocol::AnotherProtocol(){}
-
-AnotherProtocol::~AnotherProtocol(){}
-
 Worker::Worker(int parameter)
 {
 	xid = parameter;

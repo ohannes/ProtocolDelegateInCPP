@@ -10,19 +10,19 @@ void printLog(std::string message);
 class Protocol
 {
 public:
-	Protocol();
+	Protocol(){};
 	virtual void workerNotifiesDelegateOK(Worker *worker) = 0;
 	virtual void workerNotifiesDeleagateNOK(Worker *worker) = 0;
-	~Protocol();
+	~Protocol(){};
 };
 
 class AnotherProtocol
 {
 public:
-	AnotherProtocol();
+	AnotherProtocol(){};
 	virtual std::string workerRequestDelegateKey(Worker *worker) = 0;
 	virtual std::string workerRequestDelegateValue(Worker *worker) = 0;
-	~AnotherProtocol();
+	~AnotherProtocol(){};
 };
 
 class Worker
